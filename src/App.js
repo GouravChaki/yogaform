@@ -1,24 +1,42 @@
 import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar/Navbar';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+import Home from './components/Home/Home';
+import Register from './components/Register/Register';
+import About from './components/About/About';
+import Footer from './components/Footer/Footer';
+import Card from './components/Card/Card';
+import View from './components/View/View';
 
 function App() {
+  const card=useState()
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Router>
+    <Navbar/>
+      <Routes>
+        <Route path="/" element={<Home/>}></Route>
+      </Routes>
+      <Routes>
+        <Route path="/register" element={<Register card={card}/>}></Route>
+      </Routes>
+      <Routes>
+        <Route path="/about" element={<About/>}></Route>
+      </Routes>
+      <Routes>
+        <Route path="/card" element={<Card card={card}/>}></Route>
+      </Routes>
+      <Routes>
+        <Route path="/view" element={<View/>}></Route>
+      </Routes>
+    </Router>
+    </>
   );
 }
 
