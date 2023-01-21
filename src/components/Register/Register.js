@@ -1,8 +1,11 @@
 import React from "react";
 
 export default function Register(props) {
+
   const click=()=>{
-    props.card.push({
+    const object=[
+      ...props.card,
+      {
         firstname: document.getElementById('firstname').value,
         lastname: document.getElementById('lastname').value,
         email: document.getElementById('mail').value,
@@ -16,7 +19,8 @@ export default function Register(props) {
         country: document.getElementById('country').value,
         password: document.getElementById('password').value,
         confirmpassword: document.getElementById('cpassword').value
-    })
+    }]
+    props.setCard(object)
   }
   return (
     <div className="container h-50 w-50 p-4 shadow mb-4 bg-body-tertiary rounded">

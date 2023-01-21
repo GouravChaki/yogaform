@@ -4,7 +4,7 @@ import Rendercard from "./Rendercard";
 export default function Card(props) {
     
     const givecard=(item)=>{
-        return <Rendercard key={props.card.key} item={item} array={props}/>
+        return <Rendercard key={item.key} item={item} card={props.card} setCard={props.setCard}/>
     }
   return (
     <div className="container mt-5">
