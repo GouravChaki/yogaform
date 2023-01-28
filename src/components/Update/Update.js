@@ -1,21 +1,9 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 export default function Update(props) {
-    const update=()=>{
-          props.item.firstname= document.getElementById('firstname').value
-          props.item.lastname= document.getElementById('lastname').value
-          props.item.email=document.getElementById('mail').value
-          props.item.date= document.getElementById('dob').value
-          props.item.phone= document.getElementById('phone').value
-          props.item.key= document.getElementById('firstname').value+document.getElementById('phone').value
-          props.item.address= document.getElementById('address').value
-          props.item.city= document.getElementById('city').value
-          props.item.zipcode= document.getElementById('zipcode').value
-          props.item.state= document.getElementById('state').value
-          props.item.country= document.getElementById('country').value
-          props.item.password= document.getElementById('password').value
-          props.item.confirmpassword= document.getElementById('cpassword').value
-          console.log(props.item.firstname)
+  const location=useLocation()
+    const update=(event)=>{
+      location.state.email=event.target.value
       }
   return (
     <div className="container h-50 w-80 p-4 shadow mb-4 bg-body-tertiary rounded">
@@ -35,7 +23,8 @@ export default function Update(props) {
           className="form-control"
           aria-label="Sizing example input"
           aria-describedby="inputGroup-sizing-sm"
-          defaultValue={props.item.email}
+          value={location.state.email}
+          onChange={update}
           id="mail"
         />
       </div>
@@ -53,7 +42,8 @@ export default function Update(props) {
           aria-label="Sizing example input"
           aria-describedby="inputGroup-sizing-default"
           id="firstname"
-          defaultValue={props.item.firstname}
+          onChange={update}
+          value={location.state.firstname}
         />
         <span
           className="input-group-text"
@@ -68,7 +58,8 @@ export default function Update(props) {
           aria-label="Sizing example input"
           aria-describedby="inputGroup-sizing-default"
           id="lastname"
-          defaultValue={props.item.lastname}
+          onChange={update}
+          value={location.state.lastname}
         />
       </div>
       <div className="input-group mb-3">
@@ -85,7 +76,8 @@ export default function Update(props) {
           aria-label="Sizing example input"
           aria-describedby="inputGroup-sizing-sm"
           id="dob"
-          defaultValue={props.item.date}
+          onChange={update}
+          value={location.state.date}
         />
       </div>
       <div className="input-group mb-3">
@@ -102,7 +94,8 @@ export default function Update(props) {
           aria-label="Sizing example input"
           aria-describedby="inputGroup-sizing-sm"
           id="address"
-          defaultValue={props.item.address}
+          onChange={update}
+          value={location.state.address}
         />
       </div>
       <div className="input-group mb-3">
@@ -119,7 +112,8 @@ export default function Update(props) {
           aria-label="Sizing example input"
           aria-describedby="inputGroup-sizing-default"
           id="city"
-          defaultValue={props.item.city}
+          onChange={update}
+          value={location.state.city}
         />
         <span
           className="input-group-text"
@@ -134,7 +128,8 @@ export default function Update(props) {
           aria-label="Sizing example input"
           aria-describedby="inputGroup-sizing-default"
           id="zipcode"
-          defaultValue={props.item.zipcode}
+          onChange={update}
+          value={location.state.zipcode}
         />
       </div>
       <div className="input-group mb-3">
@@ -151,7 +146,8 @@ export default function Update(props) {
           aria-label="Sizing example input"
           aria-describedby="inputGroup-sizing-default"
           id="state"
-          defaultValue={props.item.state}
+          onChange={update}
+          value={location.state.state}
         />
         <span
           className="input-group-text"
@@ -166,7 +162,8 @@ export default function Update(props) {
           aria-label="Sizing example input"
           aria-describedby="inputGroup-sizing-default"
           id="country"
-          defaultValue={props.item.country}
+          onChange={update}
+          value={location.state.country}
         />
       </div>
       <div className="input-group mb-3">
@@ -184,7 +181,8 @@ export default function Update(props) {
           aria-describedby="inputGroup-sizing-sm"
           placeholder="eg:- +91 9999999999"
           id="phone"
-          defaultValue={props.item.phone}
+          onChange={update}
+          value={location.state.phone}
         />
       </div>
       <div className="input-group mb-3">
@@ -201,7 +199,8 @@ export default function Update(props) {
           aria-label="Sizing example input"
           aria-describedby="inputGroup-sizing-default"
           id="password"
-          defaultValue={props.item.password}
+          onChange={update}
+          value={location.state.password}
         />
         <span
           className="input-group-text"
@@ -216,7 +215,8 @@ export default function Update(props) {
           aria-label="Sizing example input"
           aria-describedby="inputGroup-sizing-default"
           id="cpassword"
-          defaultValue={props.item.cpassword}
+          onChange={update}
+          value={location.state.cpassword}
         />
       </div>
       <div className="text-center mt-5">
